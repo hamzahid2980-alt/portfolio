@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jamil Khan - AI/ML & Backend Engineer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { overflow-x: hidden; width: 100%; }
+        
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); animation: reveal 0.8s forwards; }
+        @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+        
+        /* Font Awesome Fix */
+        i { margin-right: 8px; }
+        
+            /* NEON CYBERPUNK - RADICAL CHANGE */
+            :root { --bg: #050505; --text: #ffffff; --accent: #ff00ff; --accent2: #00ffff; }
+            body { background: var(--bg); color: var(--text); font-family: 'Space Grotesk', sans-serif; padding: 0 0 5rem 0; }
+            
+            /* Add padding to container so it doesn't stick to iframe edges */
+            .container, main { width: 95%; max-width: 1400px; margin: 0 auto; padding: 0 1rem; }
+            
+            .navbar { position: fixed; width: 100%; top: 0; padding: 1.5rem 5%; display: flex; justify-content: space-between; background: rgba(0,0,0,0.8); backdrop-filter: blur(10px); z-index: 100; border-bottom: 1px solid #333; }
+            .nav-logo { font-size: 1.5rem; font-weight: bold; text-transform: uppercase; color: var(--accent); text-shadow: 2px 2px var(--accent2); }
+            .nav-menu { display: flex; gap: 2rem; list-style: none; }
+            .nav-menu a { color: #fff; text-decoration: none; text-transform: uppercase; letter-spacing: 2px; font-size: 0.8rem; }
+            
+            /* Padding for Hero */
+            .hero { min-height: 100vh; display: flex; flex-direction: column; justify-content: center; padding: 100px 10%; background: radial-gradient(circle at 50% 50%, #1a001a 0%, #000 70%); text-align: left; }
+            .hero-title { font-size: 5rem; line-height: 0.9; text-transform: uppercase; -webkit-text-stroke: 2px var(--text); color: transparent; margin-bottom: 1rem; }
+            .hero-title:hover { color: var(--accent); -webkit-text-stroke: 0; text-shadow: 0 0 20px var(--accent); }
+            .hero-subtitle { font-size: 1.5rem; color: var(--accent2); font-weight: 300; margin-bottom: 3rem; }
+            
+            /* Logos & Contact Links */
+            .contact-links { display: flex; gap: 1.5rem; margin-top: 1rem; }
+            .contact-links a { 
+                display: flex; align-items: center; gap: 10px;
+                color: var(--accent2); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; 
+                border: 1px solid var(--accent2); padding: 0.8rem 1.5rem; transition: 0.3s;
+            }
+            .contact-links a i { font-size: 1.2rem; }
+            .contact-links a:hover { background: var(--accent2); color: black; box-shadow: 0 0 20px var(--accent2); }
+
+            .section { padding: 6rem 10%; border-top: 1px solid #222; }
+            h2 { font-size: 3rem; margin-bottom: 3rem; color: var(--text); text-transform: uppercase; letter-spacing: -2px; border-left: 5px solid var(--accent); padding-left: 20px; }
+            
+            .experience-item { border-left: 2px solid #333; padding-left: 2rem; margin-bottom: 3rem; position: relative; }
+            .experience-item::before { content: ''; position: absolute; left: -6px; top: 0; width: 10px; height: 10px; background: var(--accent2); border-radius: 50%; box-shadow: 0 0 10px var(--accent2); }
+            .experience-item h3 { color: var(--accent); margin-bottom: 0.5rem; font-size: 1.5rem; }
+            .experience-item h4 { color: #888; margin-bottom: 1rem; font-size: 1rem; }
+            
+            .skills-grid { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+            .skill-tag { background: rgba(255, 0, 255, 0.1); border: 1px solid var(--accent); color: var(--accent); padding: 0.5rem 1rem; text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px; }
+            
+            .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; }
+            .project-card { background: #111; border: 1px solid #333; padding: 2rem; transition: 0.3s; position: relative; }
+            .project-card h3 { font-size: 1.5rem; margin-bottom: 1rem; color: #fff; }
+            .project-card:hover { border-color: var(--accent2); box-shadow: 0 0 20px rgba(0, 255, 255, 0.2); transform: translateY(-5px); }
+            .tech-stack { margin-top: 1rem; display: flex; flex-wrap: wrap; gap: 0.5rem; }
+            .tech-tag { font-size: 0.7rem; background: #222; color: #aaa; padding: 0.2rem 0.6rem; }
+            
+            .project-link { display: inline-block; margin-top: 1.5rem; color: var(--accent2); text-decoration: none; font-weight: bold; text-transform: uppercase; letter-spacing: 1px; border-bottom: 1px solid var(--accent2); }
+            
+            footer { padding: 4rem; text-align: center; color: #555; background: #000; border-top: 1px solid #222; }
+            .social-links a { color: #fff; margin: 0 1rem; font-size: 1.5rem; }
+            /* Scroll Indicator - Neon */
+            .mouse { width: 30px; height: 50px; border: 2px solid var(--accent); border-radius: 20px; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); }
+            .wheel { width: 4px; height: 8px; background: var(--accent); border-radius: 2px; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); animation: scroll 1.5s infinite; }
+            @keyframes scroll { 0% { opacity: 1; top: 10px; } 100% { opacity: 0; top: 30px; } }
+            
+    </style>
+</head>
+<body class="template-creative">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">Jamil Khan</div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                
+                
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Jamil Khan</h1>
+            <h2 class="hero-subtitle">AI/ML & Backend Engineer</h2>
+            <p class="hero-description">Results-driven AI/ML & Backend Engineer with a robust foundation in machine learning and scalable backend development, proficient in Python, Django, and RESTful APIs. Proven ability to integrate AI-assisted features into web applications, driving innovation and efficiency in data-driven systems.</p>
+            <div class="contact-links">
+                <a href="mailto:khanjamilahmed202@gmail.com"><i class="fas fa-envelope"></i> Contact Me</a>
+                <a href="linkedin.com/in/jamil-khan-55a621346/" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="github.com/Viverun" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="skills" class="section"><div class="container"><h2><i class="fas fa-laptop-code"></i> Skills & Expertise</h2>
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skills-grid"><span class="skill-tag"><i class="fab fa-python"></i> Python</span><span class="skill-tag"><i class="fas fa-code"></i> TypeScript</span></div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="skills-grid"><span class="skill-tag"><i class="fas fa-code"></i> Django</span><span class="skill-tag"><i class="fab fa-js"></i> Node.js</span><span class="skill-tag"><i class="fab fa-js"></i> Express.js</span><span class="skill-tag"><i class="fas fa-code"></i> RESTful APIs</span><span class="skill-tag"><i class="fas fa-code"></i> Backend Development</span><span class="skill-tag"><i class="fas fa-database"></i> Database Management</span><span class="skill-tag"><i class="fas fa-code"></i> OAuth 2.0</span><span class="skill-tag"><i class="fas fa-code"></i> Scalable Systems</span><span class="skill-tag"><i class="fas fa-code"></i> Caching</span><span class="skill-tag"><i class="fas fa-code"></i> Rate Limiting</span></div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Ai & Data</h3>
+                        <div class="skills-grid"><span class="skill-tag"><i class="fas fa-code"></i> Machine Learning</span><span class="skill-tag"><i class="fas fa-code"></i> NLP</span><span class="skill-tag"><i class="fas fa-code"></i> LLM</span><span class="skill-tag"><i class="fas fa-brain"></i> Data Preprocessing</span><span class="skill-tag"><i class="fas fa-brain"></i> Model Training</span><span class="skill-tag"><i class="fas fa-code"></i> Model Evaluation</span><span class="skill-tag"><i class="fas fa-code"></i> Recommendation Engines</span><span class="skill-tag"><i class="fas fa-brain"></i> AI-Assisted Features</span></div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Cybersecurity</h3>
+                        <div class="skills-grid"><span class="skill-tag"><i class="fas fa-code"></i> Cybersecurity Fundamentals</span><span class="skill-tag"><i class="fas fa-code"></i> Web Application Security</span><span class="skill-tag"><i class="fas fa-code"></i> API Security</span><span class="skill-tag"><i class="fas fa-code"></i> Vulnerability Assessment</span><span class="skill-tag"><i class="fas fa-database"></i> SQL Injection</span><span class="skill-tag"><i class="fas fa-code"></i> XSS</span><span class="skill-tag"><i class="fab fa-aws"></i> Authentication Flaws</span><span class="skill-tag"><i class="fas fa-code"></i> Secret Exposure</span><span class="skill-tag"><i class="fas fa-code"></i> Secure Engineering Practices</span><span class="skill-tag"><i class="fas fa-code"></i> Authorization-First Design</span><span class="skill-tag"><i class="fas fa-code"></i> False-Positive Reduction</span></div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Tools & Devops</h3>
+                        <div class="skills-grid"><span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span><span class="skill-tag"><i class="fab fa-docker"></i> Docker</span><span class="skill-tag"><i class="fas fa-code"></i> Apify Actors</span><span class="skill-tag"><i class="fas fa-brain"></i> Railway</span></div>
+                    </div>
+                    </div></section>
+        
+        
+            <section id="projects" class="section">
+                <div class="container">
+                    <h2><i class="fas fa-rocket"></i> Featured Projects</h2>
+                    <div class="projects-grid">
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Matrix (AI-Powered Security Testing Platform)</h3>
+                        <p>Developed an AI-powered security testing platform for automated web and API vulnerability assessment, integrating LLM-based analysis for detecting flaws like SQL Injection and XSS with contextual remediation.</p>
+                        <div class="tech-stack"><span class="tech-tag">Python</span><span class="tech-tag">Django</span><span class="tech-tag">REST APIs</span><span class="tech-tag">LLM</span></div>
+                    </div>
+                    <a href="github.com/Viverun" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+                
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>Playlistify AI (NLP-Based Spotify Playlist Generator)</h3>
+                        <p>Engineered and deployed an NLP-based Spotify playlist generator, converting natural language prompts into curated playlists via a TypeScript/Node.js full-stack app with OAuth 2.0, Docker, and a hybrid recommendation engine.</p>
+                        <div class="tech-stack"><span class="tech-tag">TypeScript</span><span class="tech-tag">Node.js</span><span class="tech-tag">Express.js</span><span class="tech-tag">OAuth 2.0</span></div>
+                    </div>
+                    <a href="github.com/Viverun" target="_blank" class="project-link">View Project <i class="fas fa-arrow-right"></i></a>
+                </div>
+                </div>
+                </div>
+            </section>
+            
+        
+            <section id="education" class="section">
+                <div class="container">
+                    <h2>Education</h2>
+                    <div class="education-list">
+                <div class="education-item">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-details">
+                        <h3>Bachelor of Engineering in Computer Engineering</h3>
+                        <h4>A.P Shah Institute of Technology - Thane</h4>
+                        <span class="year">2028</span>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </section>
+            
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                 <a href="linkedin.com/in/jamil-khan-55a621346/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                 <a href="github.com/Viverun" target="_blank"><i class="fab fa-github"></i></a>
+                 <a href="mailto:khanjamilahmed202@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2026 Jamil Khan. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
