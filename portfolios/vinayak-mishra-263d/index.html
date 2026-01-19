@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VINAYAK MISHRA - Results-driven Machine Learning Engineer & Full-stack Developer</title>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Playfair+Display:wght@400;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Inter:wght@400;600&family=Playfair+Display:ital,wght@0,400;1,400&display=swap');
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { overflow-x: hidden; width: 100%; }
+        
+        /* Animations */
+        .reveal { opacity: 0; transform: translateY(30px); animation: reveal 0.8s forwards; }
+        @keyframes reveal { to { opacity: 1; transform: translateY(0); } }
+        
+        /* Font Awesome Fix */
+        i { margin-right: 8px; }
+        
+            /* SWISS MINIMAL - STARK BLACK & WHITE */
+            :root { --bg: #ffffff; --text: #000000; --gray: #f4f4f4; }
+            body { background: var(--bg); color: var(--text); font-family: 'Inter', sans-serif; padding: 0 0 5rem 0; }
+            
+            /* Container Padding */
+            .container, main { width: 95%; max-width: 1400px; margin: 0 auto; padding: 0 1rem; }
+            
+            /* Animations */
+            @keyframes slideUp { from { transform: translateY(50px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+            @keyframes scaleIn { from { transform: scale(0.9); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+            
+            .navbar { padding: 2rem 5%; border-bottom: 4px solid black; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; background: white; z-index: 100; }
+            .nav-logo { font-size: 1.5rem; font-weight: 900; letter-spacing: -1px; background: black; color: white; padding: 0.5rem 1rem; }
+            .nav-menu { display: flex; gap: 2rem; list-style: none; }
+            .nav-menu a { color: black; text-decoration: none; font-weight: 600; text-transform: uppercase; font-size: 0.9rem; transition: 0.3s; }
+            .nav-menu a:hover { text-decoration: underline; text-underline-offset: 4px; }
+            
+            .hero { padding: 5rem 5%; min-height: 70vh; display: flex; flex-direction: column; justify-content: center; } /* Reduced padding/height */
+            .hero-title { font-size: 5rem; font-weight: 900; letter-spacing: -3px; line-height: 1; margin-bottom: 1.5rem; max-width: 1000px; animation: slideUp 0.8s ease-out; }
+            .hero-subtitle { font-size: 1.5rem; font-weight: 400; color: #555; max-width: 600px; line-height: 1.4; border-left: 4px solid black; padding-left: 1.5rem; animation: slideUp 0.8s ease-out 0.2s backwards; }
+            
+            /* Logos & Contact Links (Modern Pill Style) */
+            .contact-links { display: flex; justify-content: flex-start; gap: 1rem; margin-top: 2.5rem; flex-wrap: wrap; animation: slideUp 0.8s ease-out 0.4s backwards; }
+            .contact-links a { 
+                background: #000; color: white; padding: 1rem 2.5rem; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s; 
+                display: flex; align-items: center; gap: 10px; font-size: 1rem;
+            }
+            .contact-links a i { font-size: 1.1rem; }
+            .contact-links a:hover { transform: translateY(-3px); box-shadow: 0 8px 16px rgba(0,0,0,0.15); background: #333; }
+
+            .section { padding: 4rem 5%; } /* Reduced padding */
+            /* Grid Layout - Fixed width for header to prevent overlap */
+            .container { display: grid; grid-template-columns: 220px 1fr; gap: 3rem; border-top: 4px solid black; padding-top: 3rem; }
+            h2 { grid-column: 1; font-size: 2.5rem; font-weight: 900; text-transform: uppercase; line-height: 1; margin-bottom: 2rem; } /* Removed sticky */
+            
+            .skills-grid, .experience-list, .projects-grid, .education-list, .skill-category { grid-column: 2; }
+            
+            /* Fixed Skills Grid - Modern */
+            .skill-category { margin-bottom: 2rem; }
+            .skill-category h3 { font-size: 1.2rem; margin-bottom: 1rem; font-weight: 700; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; color: #444; }
+            .skills-grid { display: flex; flex-wrap: wrap; gap: 10px; }
+            .skill-tag { 
+                border: 2px solid black; padding: 0.6rem 1.4rem; display: inline-flex; align-items: center; gap: 8px;
+                border-radius: 100px; font-weight: 700; font-size: 0.9rem; background: white; color: black; transition: 0.2s; 
+            }
+            .skill-tag i { font-size: 1rem; }
+            .skill-tag:hover { background: black; color: white; transform: scale(1.05); cursor: default; }
+            
+            .experience-item { margin-bottom: 4rem; animation: scaleIn 0.5s ease-out; }
+            .experience-item h3 { font-size: 2.2rem; margin-bottom: 0.4rem; font-weight: 800; letter-spacing: -1px; }
+            .experience-item h4 { font-size: 1.1rem; font-weight: 500; border-bottom: 2px solid #eee; padding-bottom: 0.5rem; margin-bottom: 1rem; display: inline-block; color: #555; }
+            .experience-item p { font-size: 1.1rem; line-height: 1.6; color: #333; max-width: 800px; }
+            
+            .project-card { background: var(--gray); padding: 3rem; margin-bottom: 2.5rem; transition: 0.3s; border-radius: 24px; animation: scaleIn 0.5s ease-out; }
+            .project-card:hover { background: black; color: white; transform: scale(1.01); }
+            .project-card h3 { font-size: 2rem; font-weight: 800; margin-bottom: 0.8rem; letter-spacing: -1px; }
+            .project-card p { font-size: 1.1rem; margin-bottom: 1.5rem; }
+            .project-card:hover .tech-tag { border-color: white; color: white; }
+            .project-card:hover .project-link { color: white; }
+            
+            .tech-stack { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.5rem; }
+            .tech-tag { border: 2px solid black; padding: 0.4rem 0.8rem; display: inline-block; border-radius: 6px; font-size: 0.8rem; font-weight: 700; text-transform: uppercase; }
+            
+            .project-link { display: inline-flex; align-items: center; gap: 8px; margin-top: 0.5rem; color: black; text-decoration: none; font-weight: 900; font-size: 1rem; text-transform: uppercase; border-bottom: 3px solid currentColor; padding-bottom: 2px; }
+            
+            footer { padding: 6rem 5%; background: black; color: white; text-align: left; }
+            .social-links { display: flex; gap: 1.5rem; margin-bottom: 1.5rem; }
+            .social-links a { color: white; font-size: 2rem; transition: 0.3s; }
+            .social-links a:hover { color: #888; transform: scale(1.1); }
+            
+            @media (max-width: 1100px) { 
+                .container { grid-template-columns: 1fr; gap: 2rem; } 
+                h2 { margin-bottom: 1.5rem; border-bottom: 1px solid #000; padding-bottom: 1rem; display: inline-block; }
+                .hero-title { font-size: 3.5rem; }
+                .hero { padding: 4rem 5%; min-height: auto; }
+            }
+            .mouse { width: 30px; height: 50px; border: 2px solid black; border-radius: 20px; position: absolute; bottom: 30px; left: 50%; transform: translateX(-50%); }
+            .wheel { width: 4px; height: 8px; background: black; border-radius: 2px; position: absolute; top: 10px; left: 50%; transform: translateX(-50%); animation: scroll 1.5s infinite; }
+            @keyframes scroll { 0% { opacity: 1; top: 10px; } 100% { opacity: 0; top: 30px; } }
+            
+    </style>
+</head>
+<body class="template-modern">
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">VINAYAK MISHRA</div>
+            <ul class="nav-menu">
+                <li><a href="#hero">Home</a></li>
+                
+                
+                <li><a href="#projects">Projects</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <header id="hero" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">VINAYAK MISHRA</h1>
+            <h2 class="hero-subtitle">Results-driven Machine Learning Engineer & Full-stack Developer</h2>
+            <p class="hero-description">Results-driven Machine Learning Engineer and Full-stack Developer with a robust foundation in AI models and scalable web application development. Adept at leveraging problem-solving and critical thinking to engineer innovative, real-world solutions and lead successful technical initiatives.</p>
+            <div class="contact-links">
+                <a href="mailto:vinayakmishra9421@gmail.com"><i class="fas fa-envelope"></i> Contact Me</a>
+                <a href="vinayakmishra94v1" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="Vinayak9421" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+            </div>
+            <div class="scroll-indicator">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+            </div>
+        </div>
+        <div class="hero-bg">
+            <div class="blob blob-1"></div>
+            <div class="blob blob-2"></div>
+        </div>
+    </header>
+
+    <main>
+        <section id="skills" class="section"><div class="container"><h2><i class="fas fa-laptop-code"></i> Skills & Expertise</h2>
+                    <div class="skill-category">
+                        <h3>Languages</h3>
+                        <div class="skills-grid"><span class="skill-tag"><i class="fab fa-python"></i> Python</span><span class="skill-tag"><i class="fas fa-code"></i> C</span><span class="skill-tag"><i class="fab fa-js"></i> JavaScript</span><span class="skill-tag"><i class="fas fa-code"></i> PHP</span></div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Frontend</h3>
+                        <div class="skills-grid"><span class="skill-tag"><i class="fab fa-html5"></i> HTML</span><span class="skill-tag"><i class="fab fa-css3-alt"></i> CSS</span><span class="skill-tag"><i class="fas fa-code"></i> Bootstrap</span><span class="skill-tag"><i class="fas fa-brain"></i> Streamlit</span></div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Backend</h3>
+                        <div class="skills-grid"><span class="skill-tag"><i class="fas fa-code"></i> Flask</span><span class="skill-tag"><i class="fas fa-code"></i> Django</span><span class="skill-tag"><i class="fab fa-js"></i> Node.js</span><span class="skill-tag"><i class="fab fa-js"></i> Express.js</span><span class="skill-tag"><i class="fas fa-database"></i> MySQL</span><span class="skill-tag"><i class="fas fa-code"></i> MongoDB</span><span class="skill-tag"><i class="fas fa-database"></i> SQL</span><span class="skill-tag"><i class="fas fa-database"></i> NoSQL</span><span class="skill-tag"><i class="fas fa-code"></i> API Development</span><span class="skill-tag"><i class="fas fa-code"></i> RESTful APIs</span><span class="skill-tag"><i class="fas fa-database"></i> Database Integration</span></div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Ai & Data</h3>
+                        <div class="skills-grid"><span class="skill-tag"><i class="fas fa-code"></i> Computer Vision</span><span class="skill-tag"><i class="fas fa-code"></i> OpenCV</span><span class="skill-tag"><i class="fas fa-brain"></i> ML Algorithms (Classification)</span><span class="skill-tag"><i class="fas fa-brain"></i> ML Algorithms (Regression)</span><span class="skill-tag"><i class="fas fa-code"></i> Pandas</span><span class="skill-tag"><i class="fas fa-code"></i> NumPy</span><span class="skill-tag"><i class="fas fa-code"></i> Matplotlib</span><span class="skill-tag"><i class="fas fa-code"></i> Seaborn</span><span class="skill-tag"><i class="fas fa-code"></i> Plotly</span><span class="skill-tag"><i class="fas fa-code"></i> CNN</span><span class="skill-tag"><i class="fas fa-code"></i> KNN</span><span class="skill-tag"><i class="fas fa-code"></i> LSTM</span><span class="skill-tag"><i class="fas fa-code"></i> GBM</span><span class="skill-tag"><i class="fas fa-code"></i> Image Analysis</span><span class="skill-tag"><i class="fas fa-code"></i> Mistral-7B</span><span class="skill-tag"><i class="fas fa-brain"></i> FAISS</span><span class="skill-tag"><i class="fas fa-brain"></i> Data Wrangling</span><span class="skill-tag"><i class="fas fa-code"></i> Feature Engineering</span><span class="skill-tag"><i class="fas fa-brain"></i> Exploratory Data Analysis</span></div>
+                    </div>
+                    
+                    <div class="skill-category">
+                        <h3>Tools & Devops</h3>
+                        <div class="skills-grid"><span class="skill-tag"><i class="fab fa-git-alt"></i> Git</span></div>
+                    </div>
+                    </div></section>
+        
+        
+            <section id="projects" class="section">
+                <div class="container">
+                    <h2><i class="fas fa-rocket"></i> Featured Projects</h2>
+                    <div class="projects-grid">
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>AI Reforestation Planning Tool</h3>
+                        <p>Built an AI-driven ecological planning tool for sustainable reforestation, utilizing CNN for land suitability, KNN for species recommendation, LSTM for survival prediction, and GBM for carbon sequestration estimation, deployed with Streamlit and Flask.</p>
+                        <div class="tech-stack"><span class="tech-tag">Python</span><span class="tech-tag">CNN</span><span class="tech-tag">KNN</span><span class="tech-tag">LSTM</span></div>
+                    </div>
+                    
+                </div>
+                
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>TravelMate – Web-Based Travel Assistant</h3>
+                        <p>Developed a feature-rich tourism platform with open routing, cultural insights, live weather updates, a responsive chatbot, and custom booking/itinerary management for a seamless travel planning experience.</p>
+                        <div class="tech-stack"><span class="tech-tag">HTML</span><span class="tech-tag">CSS</span><span class="tech-tag">JavaScript</span><span class="tech-tag">PHP</span></div>
+                    </div>
+                    
+                </div>
+                
+                <div class="project-card">
+                    <div class="card-content">
+                        <h3>MediChat – LLM-Based Medical Chatbot</h3>
+                        <p>Created a RAG chatbot for healthcare support, leveraging FAISS for context retrieval from medical documents and the Mistral-7B language model for accurate, context-aware responses, deployed with Streamlit and Flask API.</p>
+                        <div class="tech-stack"><span class="tech-tag">Python</span><span class="tech-tag">Mistral-7B</span><span class="tech-tag">FAISS</span><span class="tech-tag">Streamlit</span></div>
+                    </div>
+                    
+                </div>
+                </div>
+                </div>
+            </section>
+            
+        
+            <section id="education" class="section">
+                <div class="container">
+                    <h2>Education</h2>
+                    <div class="education-list">
+                <div class="education-item">
+                    <div class="edu-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <div class="edu-details">
+                        <h3>Bachelors in Computer Engineering</h3>
+                        <h4>A.P Shah Institute of Technology, Thane (Mumbai University)</h4>
+                        <span class="year">2027</span>
+                    </div>
+                </div>
+                </div>
+                </div>
+            </section>
+            
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                 <a href="vinayakmishra94v1" target="_blank"><i class="fab fa-linkedin"></i></a>
+                 <a href="Vinayak9421" target="_blank"><i class="fab fa-github"></i></a>
+                 <a href="mailto:vinayakmishra9421@gmail.com"><i class="fas fa-envelope"></i></a>
+            </div>
+            <p>&copy; 2026 VINAYAK MISHRA. All rights reserved.</p>
+        </div>
+    </footer>
+</body>
+</html>
